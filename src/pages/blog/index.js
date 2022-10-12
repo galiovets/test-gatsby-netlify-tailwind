@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import BlogPostCard from '../../components/BlogPostCard'
 import Layout from '../../components/Layout'
@@ -21,25 +20,6 @@ const BlogIndexPage = ({
         description={siteDescription}
         canonical={`${siteUrl}blog/`}
       />
-      <Helmet>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                  if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                      document.location.href = "/admin/";
-                    });
-                  }
-                });
-              }
-            `,
-          }}
-        ></script>
-      </Helmet>
 
       <section className="max-w-3xl mx-auto px-2 sm:px-4 xl:max-w-5xl xl:px-0">
         <div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
